@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Практична робота 4. Псевдокласи стану, множині класи. Таблиця розклад</title>
+    <style>
+        body{
+            font-family: Calibri, sans-serif;
+        }
+
+        .title{
+            text-align: center;
+        }
+
+        #form-container {
+            margin-top: 20px;
+        }
+
+        #phone, #email {
+            margin-right: 10px;
+        }
+
+        #filters {
+            margin: 20px 0 10px;
+        }
+
+        select, input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+            background-color: #e6e6e6;
+        }
+
+        tr:hover {
+            background-color: rgba(255, 193, 7, 0.51);
+        }
+
+        th:hover{
+            background-color: rgba(255, 193, 7, 0.51);
+        }
+
+        #form-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #phone, #email {
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+    <body>
+        <h1 class="title">Практична робота 4.<br/>Псевдокласи стану, множині класи. Таблиця розклад</h1>
+
+        <div id="filters">
+            <label for="age-filter">Age of trainer</label>
+            <select id="age-filter" >
+                <option value="def">Default</option>
+                <option value="older">Older</option>
+                <option value="younger">Younger</option>
+            </select>
+
+            <label for="work-filter">Years of work</label>
+            <select id="work-filter">
+                <option value="def">Default</option>
+                <option value="more">By more</option>
+                <option value="less">By less</option>
+            </select>
+        </div>
+
+        <table id="tabless">
+            <tr>
+                <th onclick="sortTable(0)">Specialty</th>
+                <th onclick="sortTable(1)">Full Name</th>
+                <th onclick="sortTable(2)">Age</th>
+                <th onclick="sortTable(3)">Years of work</th>
+                <th onclick="sortTable(4)">Phone</th>
+                <th onclick="sortTable(5)">Working Days</th>
+                <th onclick="sortTable(6)">Time To work</th>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>John Doe</td>
+                <td>30</td>
+                <td>5</td>
+                <td>(555) 123-4567</td>
+                <td>Monday - Friday</td>
+                <td>8:00 AM - 2:00 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>Jane Smith</td>
+                <td>28</td>
+                <td>3</td>
+                <td>(555) 987-6543</td>
+                <td>Tuesday - Saturday</td>
+                <td>10:00 AM - 6:00 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>Michael Johnson</td>
+                <td>35</td>
+                <td>7</td>
+                <td>(555) 789-1234</td>
+                <td>Monday - Saturday</td>
+                <td>9:00 AM - 3:00 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>Sarah Adams</td>
+                <td>27</td>
+                <td>2</td>
+                <td>(555) 567-8901</td>
+                <td>Monday - Tuesday</td>
+                <td>1:00 PM - 7:00 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>David Wilson</td>
+                <td>32</td>
+                <td>6</td>
+                <td>(555) 234-5678</td>
+                <td>Friday - Tuesday</td>
+                <td>7:00 AM - 1:00 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>Laura Brown</td>
+                <td>29</td>
+                <td>4</td>
+                <td>(555) 345-6789</td>
+                <td>Friday - Saturday</td>
+                <td>12:00 PM - 6:00 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>Mark Taylor</td>
+                <td>33</td>
+                <td>8</td>
+                <td>(555) 432-1098</td>
+                <td>Friday - Saturday</td>
+                <td>10:00 AM - 4:00 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>Emily White</td>
+                <td>26</td>
+                <td>1</td>
+                <td>(555) 123-9876</td>
+                <td>Friday - Saturday</td>
+                <td>11:00 AM - 5:00 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>Robert Green</td>
+                <td>31</td>
+                <td>5</td>
+                <td>(555) 678-9012</td>
+                <td>Tuesday - Saturday</td>
+                <td>8:30 AM - 2:30 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>Olivia Johnson</td>
+                <td>34</td>
+                <td>7</td>
+                <td>(555) 890-1234</td>
+                <td>Friday - Saturday</td>
+                <td>9:30 AM - 3:30 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>William Anderson</td>
+                <td>29</td>
+                <td>3</td>
+                <td>(555) 567-2345</td>
+                <td>Monday - Saturday</td>
+                <td>2:00 PM - 8:00 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>Sophia Lee</td>
+                <td>28</td>
+                <td>2</td>
+                <td>(555) 987-3456</td>
+                <td>Monday - Friday</td>
+                <td>1:30 PM - 7:30 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>James Miller</td>
+                <td>36</td>
+                <td>9</td>
+                <td>(555) 234-5670</td>
+                <td>Monday - Friday</td>
+                <td>7:30 AM - 1:30 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>Ava Garcia</td>
+                <td>27</td>
+                <td>2</td>
+                <td>(555) 456-7890</td>
+                <td>Monday - Friday</td>
+                <td>12:30 PM - 6:30 PM</td>
+            </tr>
+            <tr>
+                <td>Fitness Trainer</td>
+                <td>Daniel Martinez</td>
+                <td>30</td>
+                <td>4</td>
+                <td>(555) 567-8901</td>
+                <td>Monday - Saturday</td>
+                <td>10:30 AM - 4:30 PM</td>
+            </tr>
+        </table>
+
+        <script>
+            function sortTable(n) {
+                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                table = document.getElementById("tabless");
+                switching = true;
+                // Set the sorting direction to ascending:
+                dir = "asc";
+                /* Make a loop that will continue until
+                no switching has been done: */
+                while (switching) {
+                    // Start by saying: no switching is done:
+                    switching = false;
+                    rows = table.rows;
+                    /* Loop through all table rows (except the
+                    first, which contains table headers): */
+                    for (i = 1; i < (rows.length - 1); i++) {
+                        // Start by saying there should be no switching:
+                        shouldSwitch = false;
+                        /* Get the two elements you want to compare,
+                        one from current row and one from the next: */
+                        x = rows[i].getElementsByTagName("TD")[n];
+                        y = rows[i + 1].getElementsByTagName("TD")[n];
+                        /* Check if the two rows should switch place,
+                        based on the direction, asc or desc: */
+                        if (dir == "asc") {
+                            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                                // If so, mark as a switch and break the loop:
+                                shouldSwitch = true;
+                                break;
+                            }
+                        } else if (dir == "desc") {
+                            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                                // If so, mark as a switch and break the loop:
+                                shouldSwitch = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (shouldSwitch) {
+                        /* If a switch has been marked, make the switch
+                        and mark that a switch has been done: */
+                        rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                        switching = true;
+                        // Each time a switch is done, increase this count by 1:
+                        switchcount ++;
+                    } else {
+                        /* If no switching has been done AND the direction is "asc",
+                        set the direction to "desc" and run the while loop again. */
+                        if (switchcount == 0 && dir == "asc") {
+                            dir = "desc";
+                            switching = true;
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <div id="form-container">
+            <form id="schedule-form">
+                <label for="phone">Телефон:</label>
+                <input type="tel" id="phone" placeholder="Введіть телефон" required pattern="\d{10}">
+
+                <label for="email">Електронна пошта:</label>
+                <input type="email" id="email" placeholder="Введіть email" required>
+
+                <button id="send-button" type="button" onclick="sendData()">Надіслати дані на телефон</button>
+            </form>
+        </div>
+
+        <script>
+            function sendData() {
+                const phoneInput = document.getElementById("phone");
+                const emailInput = document.getElementById("email");
+                const sendButton = document.getElementById("send-button");
+
+                const phonePattern = /^\d{8}$/;
+                const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+                if (phonePattern.test(phoneInput.value) && emailPattern.test(emailInput.value)) {
+                    alert("Дані надіслані.");
+                    sendButton.disabled = true;
+                } else {
+                    alert("Будь ласка, введіть правильний номер телефону і email.");
+                }
+            }
+        </script>
+    </body>
+</html>

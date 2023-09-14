@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="pz4.css">
+</head>
+<body>
+    <input type="radio" name="days" id="wd">Вимкнути будні
+    <input type="radio" name="days" id="wk">Вимкнути вихідні
+    <input type="radio" name="days" id="all">Відобразити всі дні
+    <br>
+    <input type="radio" name="qualification" id="first">Перша кваліфікація
+    <input type="radio" name="qualification" id="second">Друга кваліфікація
+    <input type="radio" name="qualification" id="high">Вища кваліфікація
+    <input type="radio" name="qualification" id="all">Відобразити всі кваліфікації
+    <br>
+    <input type="radio" name="dayHalf" id="firstH">Перша половина дня
+    <input type="radio" name="dayHalf" id="secondH">Друга половина дня
+    <input type="radio" name="dayHalf" id="all">Будь-який час
+    <table>
+        <tr>
+            <td>Спеціальність</td>
+            <td>ПІБ</td>
+            <td>Категорія</td>
+            <td>Кабінет</td>
+            <td>Години прийому</td>
+        </tr>
+        <tr class="workdays" id="f" name="secondHalf">
+            <td>Невропатолог</td>
+            <td>Орлата Г.А.</td>
+            <td>1 категорія</td>
+            <td>24</td>
+            <td>13:00-16:00</td>
+        </tr>
+        <tr class="workdays" id="h" name="secondHalf">
+            <td>Хірург</td>
+            <td>Молчанов В.Г.</td>
+            <td>Вища категорія</td>
+            <td>9</td>
+            <td>16:00-18:00</td>
+        </tr>
+        <tr class="weekends" id="f" name="secondHalf">
+            <td>Травматолог</td>
+            <td>Бисов М.В.</td>
+            <td>1 категорія</td>
+            <td>9</td>
+            <td>15:00-18:00</td>
+        </tr>
+        <tr class="workdays" id="s" name="firstAndSecondHalf">
+            <td>Стоматолог</td>
+            <td>Чернишев С.В.</td>
+            <td>2 категорія</td>
+            <td>48</td>
+            <td>8:00-15:00</td>
+        </tr>
+        <tr class="workdays"id="s" name="firstAndSecondHalf">
+            <td>Стоматолог</td>
+            <td>Сінченко Л.М.</td>
+            <td>2 категорія</td>
+            <td>48</td>
+            <td>8:00-15:00</td>
+        </tr>
+        <tr class="workdays" id="f" name="secondHalf">
+            <td>Окуліст</td>
+            <td>Горб Ю.М.</td>
+            <td>1 категорія</td>
+            <td>20</td>
+            <td>16:00-18:00</td>
+        </tr>
+        <tr class="weekends" id="f" name="firstAndSecondHalf">
+            <td>Рентгенолог</td>
+            <td>Омельченко І.І.</td>
+            <td>1 категорія</td>
+            <td>1</td>
+            <td>8:00-14:00</td>
+        </tr>
+        <tr class="workdays" id="s" name="secondHalf">
+            <td>Психіатр</td>
+            <td>Волобуєва М.В.</td>
+            <td>2 категорія</td>
+            <td>57</td>
+            <td>16:00-18:00</td>
+        </tr>
+        <tr class="weekends" id="h" name="secondHalf">
+            <td>Педіатр</td>
+            <td>Петросян Г.А.</td>
+            <td>Вища категорія</td>
+            <td>15</td>
+            <td>16:00-18:00</td>
+        </tr>
+        <tr class="workdays" id="s" name="secondHalf">
+            <td>Гінеколог</td>
+            <td>Скворцова Т.В.</td>
+            <td>2 категорія</td>
+            <td>25</td>
+            <td>16:00-18:00</td>
+        </tr>
+        <tr class="weekends" id="f" name="secondHalf">
+            <td>Інфекціоніст</td>
+            <td>Перепелиця І.Д.</td>
+            <td>1 категорія</td>
+            <td>6</td>
+            <td>16:00-18:00</td>
+        </tr>
+        <tr class="workdays" id="f" name="firstHalf">
+            <td>Дерматолог</td>
+            <td>Єрьомченко О.В.</td>
+            <td>1 категорія</td>
+            <td>61</td>
+            <td>8:00-12:00</td>
+        </tr>
+        <tr class="weekends" id="s" name="secondHalf">
+            <td>Інфекціоніст</td>
+            <td>Кондрашова К.А.</td>
+            <td>2 категорія</td>
+            <td>56</td>
+            <td>16:00-18:00</td>
+        </tr>
+        <tr class="workdays" id="h" name="secondHalf">
+            <td>Терапевт</td>
+            <td>Ізюмченко А.В.</td>
+            <td>Вища категорія</td>
+            <td>51</td>
+            <td>13:00-15:00</td>
+        </tr>
+        <tr class="workdays" id="h" name="firstAndSecondHalf">
+            <td>Кардіолог</td>
+            <td>Ізюмченко І.В.</td>
+            <td>Вища категорія</td>
+            <td>51</td>
+            <td>10:00-14:00</td>
+        </tr>
+    </table>
+    <form action="">
+        <p>Введіть свій номер телефона і email</p>
+        <input type="tel" id="tel" pattern="\d{3}-\d{3}" placeholder="111-111" required>
+        <input type="email" name="" id="email" required><br><br>
+        <button type="button">Надіслати дані на телефон</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,73 @@
+table{
+    border-collapse: collapse;
+    overflow: hidden;
+}
+td{
+    border: 1px solid black;
+    padding: 5px;
+    position: relative;
+}
+
+tr:hover{
+    background-color: lightgreen;
+}
+tr:nth-child(even) td:first-child::before {
+    content: "";
+    position: absolute;
+    background-color: lightgray;
+    top: 0;
+    left: -5000px;
+    width: 10000px;
+    height: 100%;
+    z-index: -10;
+}
+td:hover::after {
+    content: "";
+    position: absolute;
+    background-color: lightgreen;
+    left: 0;
+    top: -5000px;
+    height: 10000px;
+    width: 100%;
+    z-index: -1;
+}
+
+tr:first-child{
+    background-color: rgb(130, 130, 130);
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid black;
+}
+#tel:invalid, #email:invalid{
+    background-color: red;
+}
+#tel:valid, #email:valid{
+    background-color: lightgrey;
+}
+input:invalid~button{
+    display: none;
+}
+
+#wd:checked~table tr.workdays{
+    display: none;
+}
+#wk:checked~table tr.weekends{
+    display: none;
+}
+
+#first:checked~table tr#s, #first:checked~table tr#h{
+    display: none;
+}
+#second:checked~table tr#f, #second:checked~table tr#h{
+    display: none;
+}
+#high:checked~table tr#f, #high:checked~table tr#s{
+    display: none;
+}
+
+#firstH:checked~table tr[name="secondHalf"]{
+    display: none;
+}
+#secondH:checked~table tr[name="firstHalf"]{
+    display: none;
+}
