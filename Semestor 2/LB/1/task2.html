@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Task 2</title>
+</head>
+<body>
+
+<label for="rows">Rows: </label><input type="number" id="rows" value="5" onchange="makeTriangle()">
+
+<div id="output"></div>
+
+<script>
+    function makeTriangle(){
+        let rows = parseInt(document.getElementById("rows").value);
+        let out = '';
+
+        for (let i = rows; i >= 1 ; i--) {
+            for (let j = 1; j <= i; j++) {
+                out += ' ';
+            }
+            for (let j = 1; j <= rows - i + 1; j++) {
+                out += '#';
+            }
+            out += '  ';
+            for (let j = 1; j <= rows - i + 1; j++) {
+                out += '#';
+            }
+            out += '\n';
+        }
+
+        document.getElementById('output').innerHTML = '<pre>' + out + '</pre>';
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Task 3</title>
+</head>
+<body>
+
+<label for="braces">Braces: </label><input type="text" id="braces" onchange="validSequenceSimple()">
+
+<div id="output"></div>
+
+<h5>CODE</h5>
+<code>
+    <pre>
+function validSequenceSimple(braces){
+	let stack = 0;
+	for(let i = 0; i < braces.length; i++){
+        if(braces[i] === '('){
+            stack++;
+        }
+        if(braces[i] === ')'){
+            stack--;
+        }
+        if(stack < 0){
+            return false;
+        }
+    }
+    if(stack === 0){
+        return true;
+    }
+    else {
+        return false;
+    }
+}
+
+    </pre>
+</code>
+<script>
+
+    function validSequenceSimple(){
+
+        let braces = document.getElementById("braces").value;
+
+        let stack = 0;
+        for(let i = 0; i < braces.length; i++){
+            if(braces[i] === '('){
+                stack++;
+            }
+            if(braces[i] === ')'){
+                stack--;
+            }
+            if(stack < 0){
+                document.getElementById('output').innerHTML = 'Invalid sequence';
+                return false;
+            }
+        }
+        if(stack === 0){
+            document.getElementById('output').innerHTML = 'Valid sequence';
+            return true;
+        }
+        else {
+            document.getElementById('output').innerHTML = 'Invalid sequence';
+            return false;
+        }
+    }
+
+
+</script>
+
+</body>
+</html>
